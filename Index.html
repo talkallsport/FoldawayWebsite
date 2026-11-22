@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foldaway LED Scoreboards | Portable LED Scoreboards & COB Displays Australia</title>
+  <meta name="description" content="Portable folding LED scoreboards, match animation displays, COB fine-pitch LED walls, and off-grid 24V LiFePO4 sports display solutions in Brisbane, Queensland." />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono for authentic LED scoreboard readouts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Custom Brand Configuration (Deep Obsidian + Electric Scoreboard Green & Amber) -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#07080a',
+            surface: '#0f1216',
+            surfaceLight: '#171c23',
+            ledGreen: '#10e868',
+            ledAmber: '#ffb020',
+            ledRed: '#ff3b30',
+          },
+          boxShadow: {
+            'green-glow': '0 0 28px rgba(16, 232, 104, 0.28)',
+            'amber-glow': '0 0 25px rgba(255, 176, 32, 0.22)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Subtle LED dot-matrix texture */
+    .led-matrix-bg {
+      background-color: #07080a;
+      background-image: radial-gradient(rgba(16, 232, 104, 0.08) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    /* Custom dark scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07080a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232a35;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10e868;
+    }
+
+    /* Responsive 16:9 Video Container */
+    .aspect-video-box {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .aspect-video-box iframe,
+    .aspect-video-box video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Smooth Slide Fade/Scale Transition */
+    @keyframes slideEnter {
+      from {
+        opacity: 0.25;
+        transform: scale(1.02);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .animate-slide-enter {
+      animation: slideEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-100 font-sans antialiased selection:bg-ledGreen selection:text-obsidian overflow-x-hidden">
+
+  <!-- ===================================================================== -->
+  <!-- TOP ANNOUNCEMENT BAR                                                  -->
+  <!-- ===================================================================== -->
+  <div class="bg-surface border-b border-white/10 text-xs py-2 px-4 text-center text-slate-300">
+    <span class="inline-flex flex-wrap items-center justify-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-ledGreen animate-pulse"></span>
+      <span>Brisbane & Australia-Wide Delivery • <strong class="text-white">NovaStar</strong> Pro Control • Optional <strong class="text-ledAmber">24V LiFePO4</strong> Off-Grid Power</span>
+    </span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- NAVIGATION HEADER WITH LOGO INTEGRATION                               -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Brand Logo (Loads media/logo.png with automatic SVG fallback emblem) -->
+        <a href="#" class="flex items-center gap-3 group shrink-0">
+          <img
+            src="media/logo.png"
+            alt="Foldaway LED Scoreboards Logo"
+            class="h-12 sm:h-14 w-auto object-contain rounded-lg"
+            onerror="this.style.display='none'; document.getElementById('header-logo-fallback').classList.remove('hidden');"
+          />
+          <!-- Graceful SVG + Typography Fallback if media/logo.png is not uploaded yet -->
+          <div id="header-logo-fallback" class="hidden flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ledGreen/20 to-emerald-950 border border-ledGreen/50 flex items-center justify-center shadow-green-glow group-hover:scale-105 transition-transform">
+              <svg class="w-7 h-7 text-ledGreen" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2">
+                <!-- 3-Panel Folding LED Grid Emblem -->
+                <rect x="2" y="5" width="6.5" height="18" rx="1.2" />
+                <rect x="10.75" y="3.5" width="6.5" height="21" rx="1.2" class="text-white" stroke="currentColor" />
+                <rect x="19.5" y="5" width="6.5" height="18" rx="1.2" />
+                <!-- LED Matrix Dots -->
+                <circle cx="5.25" cy="10" r="0.8" fill="currentColor" />
+                <circle cx="5.25" cy="14" r="0.8" fill="currentColor" />
+                <circle cx="14" cy="10" r="0.9" fill="#10e868" />
+                <circle cx="14" cy="14" r="0.9" fill="#ffb020" />
+                <circle cx="14" cy="18" r="0.9" fill="#10e868" />
+                <circle cx="22.75" cy="10" r="0.8" fill="currentColor" />
+                <circle cx="22.75" cy="14" r="0.8" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <span class="block text-base sm:text-lg font-black tracking-wider text-white leading-none">
+                FOLDAWAY <span class="text-ledGreen">LED</span>
+              </span>
+              <span class="block text-[11px] font-mono tracking-[0.22em] text-ledAmber uppercase mt-1">
+                SCOREBOARDS
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <a href="#showcase" class="hover:text-ledGreen transition-colors">Photo & GIF Reel</a>
+          <a href="#products" class="hover:text-ledGreen transition-colors">LED Range</a>
+          <a href="#videos" class="hover:text-ledGreen transition-colors">Demo Videos</a>
+          <a href="#applications" class="hover:text-ledGreen transition-colors">Applications</a>
+          <button onclick="toggleEditGuide(true)" class="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-ledAmber transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            Quick Edit Guide
+          </button>
+          <a href="#enquire" class="px-5 py-2.5 rounded-xl bg-ledGreen text-obsidian font-extrabold hover:bg-emerald-400 transition-all shadow-green-glow">
+            Enquire Now
+          </a>
+        </nav>
+
+        <!-- Mobile Controls -->
+        <div class="flex items-center gap-2 md:hidden">
+          <button onclick="toggleEditGuide(true)" class="p-2.5 rounded-xl bg-surfaceLight border border-white/10 text-ledAmber text-xs font-mono" aria-label="Quick Edit Guide">
+            &lt;/&gt;
+          </button>
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-surfaceLight border border-white/10 text-white hover:text-ledGreen" aria-label="Toggle Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-white/10 px-4 pt-2 pb-6 space-y-2">
+      <a href="#showcase" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-ledGreen">Photo & GIF Reel</a>
+      <a href="#products" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-ledGreen">LED Range</a>
+      <a href="#videos" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-ledGreen">Demo Videos</a>
+      <a href="#applications" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-ledGreen">Applications</a>
+      <a href="#enquire" onclick="toggleMobileMenu()" class="block py-3 px-4 rounded-xl text-center font-extrabold bg-ledGreen text-obsidian mt-2">Enquire Now</a>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- HERO + AUTO-SCROLLING GROUPED PHOTO & GIF SHOWCASE                    -->
+  <!-- ===================================================================== -->
+  <section id="showcase" class="relative led-matrix-bg border-b border-white/10 overflow-hidden">
+    <!-- Subtle Ambient LED Glows -->
+    <div class="absolute -top-28 -left-28 w-96 h-96 bg-ledGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 -right-24 w-96 h-96 bg-ledAmber/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Hero Left Copy (5 Columns) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surfaceLight border border-ledGreen/35 text-ledGreen text-xs font-mono uppercase tracking-wider">
+            <span>Brisbane, QLD • Australian Built & Configured</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-white leading-[1.08]">
+            Portable <span class="text-transparent bg-clip-text bg-gradient-to-r from-ledGreen to-emerald-300">Foldaway LED</span> Scoreboards & Screens.
+          </h1>
+
+          <p class="text-base text-slate-300 leading-relaxed">
+            Built for Australian cricket ovals, AFL clubs, schools, and commercial venues. Rapid-deploy <strong class="text-white">folding LED scoreboards</strong>, dynamic <strong class="text-white">boundary & wicket animations</strong>, <strong class="text-white">folding LED posters</strong>, and ultra-fine pitch <strong class="text-white">COB LED walls</strong>—driven by <span class="text-ledGreen font-semibold">NovaStar</span> with optional <span class="text-ledAmber font-semibold">24V LiFePO4</span> off-grid power.
+          </p>
+
+          <!-- Key Technical Highlights -->
+          <div class="grid grid-cols-2 gap-3 pt-1">
+            <div class="bg-surface/95 border border-white/10 rounded-xl p-3.5">
+              <div class="text-ledGreen font-mono text-xs font-bold">LIVE MATCH SYNC</div>
+              <div class="text-xs text-slate-400 mt-0.5">PlayHQ, FrogBox & Voice Control</div>
+            </div>
+            <div class="bg-surface/95 border border-white/10 rounded-xl p-3.5">
+              <div class="text-ledAmber font-mono text-xs font-bold">24V LiFePO4</div>
+              <div class="text-xs text-slate-400 mt-0.5">Off-Grid Solar / Battery Ready</div>
+            </div>
+            <div class="bg-surface/95 border border-white/10 rounded-xl p-3.5">
+              <div class="text-white font-mono text-xs font-bold">5,800+ NITS</div>
+              <div class="text-xs text-slate-400 mt-0.5">Crystal Clear Direct Sunlight</div>
+            </div>
+            <div class="bg-surface/95 border border-white/10 rounded-xl p-3.5">
+              <div class="text-emerald-300 font-mono text-xs font-bold">COB & OUTDOOR</div>
+              <div class="text-xs text-slate-400 mt-0.5">IP65 Weather & Knock Proof</div>
+            </div>
+          </div>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#enquire" class="px-6 py-3.5 rounded-xl bg-ledGreen text-obsidian font-extrabold text-sm hover:bg-emerald-400 transition-all shadow-green-glow">
+              Request Quote & Spec Sheet
+            </a>
+            <a href="#videos" class="px-5 py-3.5 rounded-xl bg-surfaceLight hover:bg-white/10 text-white border border-white/15 font-bold text-sm transition-all flex items-center gap-2">
+              <svg class="w-4 h-4 text-ledAmber" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+              Watch Demo Videos
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right: Sequential Auto-Scrolling Grouped Photo & GIF Reel (7 Columns) -->
+        <div class="lg:col-span-7">
+          <div
+            id="hero-carousel-wrapper"
+            onmouseenter="pauseCarousel(true)"
+            onmouseleave="pauseCarousel(false)"
+            class="rounded-2xl bg-surface border border-white/15 p-3 sm:p-4 shadow-2xl relative"
+          >
+            <!-- Top Group Filter Pills & Auto-Play Indicator -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-white/10">
+              <div id="showcase-group-tabs" class="flex flex-wrap items-center gap-1.5">
+                <button onclick="setShowcaseGroup('All')" data-group="All" class="group-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-ledGreen text-obsidian transition-all">
+                  All Showcase (10)
+                </button>
+                <button onclick="setShowcaseGroup('Live Scoreboards')" data-group="Live Scoreboards" class="group-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all">
+                  Live Scoreboards
+                </button>
+                <button onclick="setShowcaseGroup('Match Animations & GIFs')" data-group="Match Animations & GIFs" class="group-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all">
+                  Animations & GIFs
+                </button>
+                <button onclick="setShowcaseGroup('COB & Installations')" data-group="COB & Installations" class="group-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all">
+                  COB & Installations
+                </button>
+              </div>
+
+              <!-- Auto-scroll status badge -->
+              <button onclick="toggleManualPause()" id="carousel-play-btn" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-obsidian border border-white/10 text-[11px] font-mono text-ledGreen hover:border-ledGreen/50 transition-colors" title="Pause or Resume Auto-Scroll">
+                <span id="carousel-pulse-dot" class="w-2 h-2 rounded-full bg-ledGreen animate-ping"></span>
+                <span id="carousel-status-text">AUTO REEL</span>
+              </button>
+            </div>
+
+            <!-- Main Slide Viewport (16:10 Landscape Container) -->
+            <div class="relative rounded-xl bg-black border border-white/10 overflow-hidden aspect-[16/10] group">
+              <!-- Active Slide Image / GIF -->
+              <img
+                id="carousel-img"
+                src=""
+                alt="Foldaway LED Showcase"
+                class="w-full h-full object-contain bg-obsidian transition-all duration-500"
+              />
+
+              <!-- Graceful Fallback Graphic if local media/*.jpg file isn't placed in folder yet -->
+              <div id="carousel-fallback" class="hidden absolute inset-0 bg-gradient-to-br from-obsidian via-surface to-obsidian flex flex-col items-center justify-center p-6 text-center">
+                <div class="w-16 h-16 rounded-2xl bg-ledGreen/10 border border-ledGreen/40 flex items-center justify-center text-ledGreen mb-3">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <div id="fallback-title" class="text-lg font-bold text-white">Showcase Slide</div>
+                <div id="fallback-path" class="mt-1.5 px-3 py-1 rounded-md bg-black/80 border border-ledAmber/40 font-mono text-xs text-ledAmber">media/filename.jpg</div>
+                <p class="text-xs text-slate-400 max-w-md mt-2">
+                  Drop your photo into the <code class="text-ledGreen">media/</code> folder next to <code class="text-ledGreen">index.html</code> and it will display automatically here.
+                </p>
+              </div>
+
+              <!-- Previous / Next Navigation Arrows -->
+              <button onclick="prevSlide()" aria-label="Previous Slide" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-obsidian/80 hover:bg-ledGreen text-white hover:text-obsidian border border-white/15 flex items-center justify-center transition-all opacity-90 sm:opacity-0 sm:group-hover:opacity-100 shadow-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button onclick="nextSlide()" aria-label="Next Slide" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-obsidian/80 hover:bg-ledGreen text-white hover:text-obsidian border border-white/15 flex items-center justify-center transition-all opacity-90 sm:opacity-0 sm:group-hover:opacity-100 shadow-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+
+              <!-- Top-Right Slide Counter Pill -->
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-obsidian/85 backdrop-blur-md border border-white/15 font-mono text-xs text-white">
+                <span id="carousel-counter" class="text-ledGreen font-bold">1</span> / <span id="carousel-total">10</span>
+              </div>
+
+              <!-- Smooth Progress Bar along Bottom of Image -->
+              <div class="absolute bottom-0 inset-x-0 h-1 bg-white/10">
+                <div id="carousel-progress" class="h-full bg-ledGreen transition-all duration-100" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- Caption Bar & File Mapping Indicator -->
+            <div class="mt-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-obsidian/90 border border-white/10 rounded-xl p-3.5">
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span id="carousel-group-badge" class="px-2 py-0.5 rounded bg-ledGreen/15 border border-ledGreen/30 text-ledGreen font-mono text-[11px] font-bold uppercase">
+                    Live Scoreboards
+                  </span>
+                  <span id="carousel-file-badge" class="font-mono text-[11px] text-slate-400">
+                    media/AusIndiaU19.jpg
+                  </span>
+                </div>
+                <h2 id="carousel-title" class="text-sm sm:text-base font-bold text-white mt-1">
+                  Australia vs India U19 Cricket — Live Match Scoreboard
+                </h2>
+                <p id="carousel-desc" class="text-xs text-slate-400 mt-0.5">
+                  High-contrast outdoor LED scoreboard displaying live overs, batsman stats, extras, and required run rate.
+                </p>
+              </div>
+
+              <!-- Thumbnail Strip / Dot Indicators -->
+              <div id="carousel-dots" class="flex items-center gap-1.5 shrink-0 self-start sm:self-center">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- PRODUCT SHOWCASE GRID (DRIVEN BY PRODUCTS ARRAY)                      -->
+  <!-- ===================================================================== -->
+  <section id="products" class="py-20 bg-obsidian border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-ledGreen font-mono text-xs uppercase tracking-widest">Commercial & Sporting Hardware</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">LED Screen & Scoreboard Range</h2>
+          <p class="text-slate-400 mt-2 max-w-2xl">
+            Modular, road-case ready, and trailer-mountable LED display solutions configured in Brisbane for Australian conditions.
+          </p>
+        </div>
+        <button onclick="toggleEditGuide(true)" class="self-start md:self-auto text-xs font-mono text-ledAmber hover:underline flex items-center gap-1.5">
+          <span>+ How to edit product specs & photos</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Products Grid -->
+      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Populated automatically from PRODUCTS array -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- DEMO VIDEOS & ACTION REELS GALLERY (DRIVEN BY DEMO_VIDEOS ARRAY)      -->
+  <!-- ===================================================================== -->
+  <section id="videos" class="py-20 bg-surface border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-ledAmber font-mono text-xs uppercase tracking-widest">In-Action Footage & Walkthroughs</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Demo Videos & Action Reels</h2>
+          <p class="text-slate-400 mt-2 max-w-xl">
+            Watch our foldaway scoreboards, boundary graphics, and COB displays operating in full daylight and indoor venues.
+          </p>
+        </div>
+
+        <!-- Video Category Filter Tabs -->
+        <div id="video-filters" class="flex flex-wrap gap-2">
+          <button onclick="filterVideos('All')" data-filter="All" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-ledGreen text-obsidian transition-all">
+            All Videos
+          </button>
+          <button onclick="filterVideos('Cricket & Sport')" data-filter="Cricket & Sport" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all">
+            Cricket & Sport
+          </button>
+          <button onclick="filterVideos('Folding Posters')" data-filter="Folding Posters" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all">
+            Folding Posters
+          </button>
+          <button onclick="filterVideos('COB & Immersive')" data-filter="COB & Immersive" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all">
+            COB & Immersive
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Videos Grid -->
+      <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated automatically from DEMO_VIDEOS array -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATIONS & OFF-GRID POWER ARCHITECTURE                            -->
+  <!-- ===================================================================== -->
+  <section id="applications" class="py-20 bg-obsidian border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-ledGreen font-mono text-xs uppercase tracking-widest">Built For Australian Venues</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Key Applications & Turnkey Tech</h2>
+        <p class="text-slate-400 mt-3">
+          From regional cricket & AFL ovals without mains power to high-end corporate foyers and live event production.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- App Card 1 -->
+        <div class="bg-surface border border-white/10 rounded-2xl p-6 hover:border-ledGreen/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-ledGreen/10 text-ledGreen flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">Community & Club Sport</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Cricket, AFL, Rugby League, Football, and Athletics. PlayHQ / FrogBox compatible live scoring plus custom boundary & sponsor reels.
+          </p>
+        </div>
+
+        <!-- App Card 2 -->
+        <div class="bg-surface border border-white/10 rounded-2xl p-6 hover:border-ledAmber/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-ledAmber/10 text-ledAmber flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">24V LiFePO4 Off-Grid</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Run all weekend without trenching mains cables. Integrated lithium iron phosphate battery banks with optional folding solar arrays.
+          </p>
+        </div>
+
+        <!-- App Card 3 -->
+        <div class="bg-surface border border-white/10 rounded-2xl p-6 hover:border-ledGreen/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-ledGreen/10 text-ledGreen flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">COB Fine-Pitch Indoor</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Chip-on-Board anti-collision, moisture-sealed surfaces (P0.9 to P1.8) for boardrooms, broadcast studios, and immersive sports rooms.
+          </p>
+        </div>
+
+        <!-- App Card 4 -->
+        <div class="bg-surface border border-white/10 rounded-2xl p-6 hover:border-ledAmber/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-ledAmber/10 text-ledAmber flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">Events, Hire & Retail</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Wheeled folding LED posters that fit into a van or SUV, plus die-cast magnesium rental cabinets for rapid staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- ENQUIRE / QUOTE SECTION                                               -->
+  <!-- ===================================================================== -->
+  <section id="enquire" class="py-20 bg-surface relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="bg-obsidian border border-white/15 rounded-3xl p-6 sm:p-10 shadow-2xl">
+
+        <div class="text-center mb-8">
+          <span class="text-ledAmber font-mono text-xs uppercase tracking-widest">Brisbane Sales & Technical Consultation</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Request a Quote or Live Demo</h2>
+          <p class="text-slate-400 mt-2 text-sm sm:text-base">
+            Enquiries go directly to <strong class="text-ledGreen">charlie@talkallsport.com</strong>. Tell us about your club, venue, or custom screen size.
+          </p>
+        </div>
+
+        <form id="enquiry-form" onsubmit="handleEnquirySubmit(event)" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-xs font-mono uppercase text-slate-400 mb-2">Your Name *</label>
+              <input type="text" id="name" required placeholder="e.g. Sarah Jenkins"
+                class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ledGreen transition-colors" />
+            </div>
+            <div>
+              <label for="club" class="block text-xs font-mono uppercase text-slate-400 mb-2">Club / School / Business</label>
+              <input type="text" id="club" placeholder="e.g. Norths Cricket Club"
+                class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ledGreen transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="email" class="block text-xs font-mono uppercase text-slate-400 mb-2">Email Address *</label>
+              <input type="email" id="email" required placeholder="you@club.com.au"
+                class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ledGreen transition-colors" />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-mono uppercase text-slate-400 mb-2">Phone Number</label>
+              <input type="tel" id="phone" placeholder="04XX XXX XXX"
+                class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ledGreen transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="product-select" class="block text-xs font-mono uppercase text-slate-400 mb-2">Product of Interest</label>
+              <select id="product-select"
+                class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white focus:outline-none focus:border-ledGreen transition-colors">
+                <option value="Foldaway Portable LED Scoreboard">Foldaway Portable LED Scoreboard</option>
+                <option value="COB Fine-Pitch Indoor Wall">COB Fine-Pitch Indoor Wall</option>
+                <option value="Folding LED Poster Display">Folding LED Poster Display</option>
+                <option value="Modular Rental LED Cabinets">Modular Rental LED Cabinets</option>
+                <option value="24V LiFePO4 Off-Grid Solar/Battery Kit">24V LiFePO4 Off-Grid Solar/Battery Kit</option>
+                <option value="Custom Project / Multiple Screens">Custom Project / Multiple Screens</option>
+              </select>
+            </div>
+            <div>
+              <label for="power-option" class="block text-xs font-mono uppercase text-slate-400 mb-2">Power Configuration</label>
+              <select id="power-option"
+                class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white focus:outline-none focus:border-ledGreen transition-colors">
+                <option value="240V Mains Powered">240V Mains Powered</option>
+                <option value="24V LiFePO4 Off-Grid Battery">24V LiFePO4 Off-Grid Battery</option>
+                <option value="24V LiFePO4 + Solar Charging Array">24V LiFePO4 + Solar Charging Array</option>
+                <option value="Not Sure - Need Advice">Not Sure — Need Advice</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-mono uppercase text-slate-400 mb-2">Project Details / Dimensions / Location *</label>
+            <textarea id="message" rows="4" required placeholder="Tell us about your ground or venue, preferred screen size, or if you'd like to book an in-person demo in Brisbane..."
+              class="w-full px-4 py-3 rounded-xl bg-surfaceLight border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ledGreen transition-colors"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+            <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-ledGreen text-obsidian font-extrabold text-base hover:bg-emerald-400 transition-all shadow-green-glow">
+              Send Quote Request to Charlie
+            </button>
+
+            <button type="button" onclick="copyEmailAddress()" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-surfaceLight hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 flex items-center justify-center gap-2 transition-colors">
+              <span id="copy-email-label">Copy: charlie@talkallsport.com</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Custom Confirmation Banner -->
+        <div id="enquiry-feedback" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER WITH LOGO                                                      -->
+  <!-- ===================================================================== -->
+  <footer class="bg-obsidian border-t border-white/10 py-12 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img
+          src="media/logo.png"
+          alt="Foldaway LED Scoreboards"
+          class="h-10 w-auto object-contain rounded"
+          onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').classList.remove('hidden');"
+        />
+        <div id="footer-logo-fallback" class="hidden font-black text-white tracking-wider">
+          FOLDAWAY <span class="text-ledGreen">LED</span> SCOREBOARDS
+        </div>
+        <div class="text-xs text-slate-500 border-l border-white/10 pl-4">
+          Brisbane, Queensland, Australia<br/>
+          www.foldawayledscoreboards.com
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 text-xs">
+        <a href="mailto:charlie@talkallsport.com" class="text-ledGreen hover:underline">charlie@talkallsport.com</a>
+        <a href="mailto:info@foldawayledscoreboards.com" class="text-slate-300 hover:text-white">info@foldawayledscoreboards.com</a>
+        <button onclick="toggleEditGuide(true)" class="text-ledAmber hover:underline font-mono">Site Owner Quick Edit Guide</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- VIDEO PLAYER LIGHTBOX MODAL                                           -->
+  <!-- ===================================================================== -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeVideoModal()">
+    <div class="bg-surface border border-white/20 rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/10">
+        <div>
+          <span id="modal-video-cat" class="text-[11px] font-mono text-ledGreen uppercase">Category</span>
+          <h3 id="modal-video-title" class="text-base sm:text-lg font-bold text-white">Video Title</h3>
+        </div>
+        <button onclick="closeVideoModal()" class="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white" aria-label="Close Video">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div id="modal-video-container" class="aspect-video-box bg-black"></div>
+      <div class="px-5 py-3.5 bg-obsidian flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <p id="modal-video-desc" class="text-xs sm:text-sm text-slate-400"></p>
+        <button onclick="enquireFromModal()" class="shrink-0 px-4 py-2 rounded-lg bg-ledGreen text-obsidian font-extrabold text-xs hover:bg-emerald-400">
+          Enquire About This Setup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- QUICK EDIT GUIDE MODAL FOR CHARLIE                                    -->
+  <!-- ===================================================================== -->
+  <div id="edit-guide-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4" onclick="toggleEditGuide(false)">
+    <div class="bg-surface border border-ledAmber/40 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+          <span class="px-2.5 py-1 rounded bg-ledAmber/15 text-ledAmber font-mono text-xs font-bold">OWNER SETUP & EDIT GUIDE</span>
+          <h3 class="text-2xl font-black text-white mt-2">Folder Setup, Logo & Adding Content</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Keep <code class="text-ledGreen">index.html</code> in your main website folder alongside a subfolder named <code class="text-ledAmber">media/</code>.</p>
+        </div>
+        <button onclick="toggleEditGuide(false)" class="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300">✕</button>
+      </div>
+
+      <div class="space-y-6 mt-6 text-sm">
+        <!-- Step 1: Folder & Logo -->
+        <div>
+          <h4 class="font-bold text-ledGreen">1. Drop Your Logo & Photos into the <code class="text-ledAmber">media/</code> Folder</h4>
+          <p class="text-slate-300 text-xs mt-1 leading-relaxed">
+            Create a folder named <code class="text-white">media</code> right next to <code class="text-white">index.html</code> and save your logo as <code class="text-ledAmber">media/logo.png</code> along with your showcase images:
+          </p>
+          <div class="mt-2 bg-obsidian border border-white/10 rounded-xl p-3.5 font-mono text-xs text-slate-300 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+            <div>📁 <strong class="text-white">YourWebsiteFolder/</strong></div>
+            <div class="text-slate-500 hidden sm:block">← Upload this folder to Cloudflare/Netlify</div>
+            <div class="pl-4">📄 <span class="text-ledGreen">index.html</span></div>
+            <div class="pl-4">📁 <strong class="text-ledAmber">media/</strong></div>
+            <div class="pl-8">🖼️ logo.png <span class="text-slate-500">(Header & Footer Logo)</span></div>
+            <div class="pl-8">🖼️ AusIndiaU19.jpg</div>
+            <div class="pl-8">🖼️ BMC2Final.jpg</div>
+            <div class="pl-8">🖼️ AFLRoos.jpg</div>
+            <div class="pl-8">🖼️ BoundarySixClearScreen.jpg</div>
+            <div class="pl-8">🖼️ BoundarySix.jpg <span class="text-slate-500">(or .gif)</span></div>
+            <div class="pl-8">🖼️ BurningCatch.jpg <span class="text-slate-500">(or .gif)</span></div>
+            <div class="pl-8">🖼️ BigTV1.jpg & BigTV3.jpg</div>
+            <div class="pl-8">🖼️ COBInstall.jpg & BigTVConstruction.jpg</div>
+          </div>
+        </div>
+
+        <!-- Step 2: Adding Slides or GIFs -->
+        <div>
+          <h4 class="font-bold text-ledGreen">2. Adding New Photos or GIFs to the Hero Auto-Scroller</h4>
+          <p class="text-slate-300 text-xs mt-1 mb-2">
+            Scroll to <code class="text-ledAmber">const SHOWCASE_SLIDES = [</code> at the bottom of <code class="text-white">index.html</code> and paste a new slide block in the order you want it to scroll:
+          </p>
+          <pre class="bg-obsidian border border-white/10 rounded-xl p-4 text-xs font-mono text-slate-200 overflow-x-auto"><code>{
+  group: "Match Animations & GIFs", // Options: "Live Scoreboards", "Match Animations & GIFs", "COB & Installations"
+  title: "Boundary Four Flame Animation",
+  file: "media/BoundaryFour.gif",
+  description: "Full-screen animated boundary graphic triggered on score update."
+},</code></pre>
+        </div>
+
+        <!-- Step 3: Adding YouTube Demo Videos -->
+        <div>
+          <h4 class="font-bold text-ledGreen">3. Adding YouTube Demo Videos</h4>
+          <p class="text-slate-300 text-xs mt-1 mb-2">
+            Scroll to <code class="text-ledAmber">const DEMO_VIDEOS = [</code> and paste any normal YouTube URL:
+          </p>
+          <pre class="bg-obsidian border border-white/10 rounded-xl p-4 text-xs font-mono text-slate-200 overflow-x-auto"><code>{
+  title: "Brisbane Cricket Club P5 Foldaway Test",
+  category: "Cricket & Sport",
+  videoUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+  duration: "01:45",
+  specsBadge: "P5 Outdoor • 24V Off-Grid",
+  description: "Full daylight visibility test with NovaStar TB40 controller."
+},</code></pre>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/10 flex justify-end">
+        <button onclick="toggleEditGuide(false)" class="px-5 py-2.5 rounded-xl bg-ledAmber text-obsidian font-extrabold text-xs">
+          Got It, Close Guide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <!-- EASY-EDIT CONFIGURATION SECTION FOR CHARLIE (EDIT BELOW THIS LINE!)   -->
+  <!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <script>
+    /**
+     * 1. HERO AUTO-SCROLLING PHOTO & GIF SHOWCASE (ORDERED BY GROUP)
+     * The website automatically scrolls through these slides in exact order.
+     * Groups:
+     *   - "Live Scoreboards"
+     *   - "Match Animations & GIFs"
+     *   - "COB & Installations"
+     */
+    const SHOWCASE_SLIDES = [
+      // --- GROUP 1: LIVE MATCH SCOREBOARDS ---
+      {
+        group: "Live Scoreboards",
+        title: "Australia vs India U19 — Live Match Scoreboard",
+        file: "media/AusIndiaU19.jpg",
+        description: "High-contrast outdoor LED scoreboard displaying live overs, batsman stats, extras, and required run rate."
+      },
+      {
+        group: "Live Scoreboards",
+        title: "Norths Cricket Club Final — Full Daylight Visibility",
+        file: "media/BMC2Final.jpg",
+        description: "Crisp 5,800+ nit outdoor LED readability in bright Queensland afternoon conditions."
+      },
+      {
+        group: "Live Scoreboards",
+        title: "Maroochydore Roos vs Aspley Hornets — AFL Scoreboard",
+        file: "media/AFLRoos.jpg",
+        description: "Multi-sport scoring template with club crests, quarter countdown clock, goals, behinds, and total points."
+      },
+
+      // --- GROUP 2: DYNAMIC MATCH ANIMATIONS & GIFS ---
+      {
+        group: "Match Animations & GIFs",
+        title: "Boundary Six — High-Impact Outdoor LED Display",
+        file: "media/BoundarySixClearScreen.jpg",
+        description: "Instant crowd-engaging boundary 6 animation rendered on our glare-free black-face LED modules."
+      },
+      {
+        group: "Match Animations & GIFs",
+        title: "Boundary 6 Flame Graphic / GIF",
+        file: "media/BoundarySix.jpg",
+        description: "Custom animated match graphics triggered automatically from your scoring console."
+      },
+      {
+        group: "Match Animations & GIFs",
+        title: "Wicket / Burning Catch Graphic / GIF",
+        file: "media/BurningCatch.jpg",
+        description: "High-definition wicket celebration animation designed for maximum stadium atmosphere."
+      },
+
+      // --- GROUP 3: LARGE-FORMAT COB & MODULAR INSTALLATIONS ---
+      {
+        group: "COB & Installations",
+        title: "Ultra-Fine Pitch COB LED Display",
+        file: "media/BigTV1.jpg",
+        description: "Seamless Chip-on-Board micro-pitch indoor screen with deep contrast and true-to-life colour accuracy."
+      },
+      {
+        group: "COB & Installations",
+        title: "High-Contrast Large-Format Commercial Wall",
+        file: "media/BigTV3.jpg",
+        description: "Driven by NovaStar HDR video processing for corporate foyers, broadcast studios, and sports clubs."
+      },
+      {
+        group: "COB & Installations",
+        title: "Wall-Mounted COB Array Installation",
+        file: "media/COBInstall.jpg",
+        description: "Precision-aligned die-cast cabinets engineered for flat, zero-bezel indoor installations."
+      },
+      {
+        group: "COB & Installations",
+        title: "Modular Cabinet Assembly & Engineering",
+        file: "media/BigTVConstruction.jpg",
+        description: "Clean internal power and data redundancy built for reliable commercial and touring performance."
+      }
+    ];
+
+    /**
+     * 2. LED PRODUCTS & SPECS LIST
+     * Edit or add products below. Each card uses one of your uploaded photos as its showcase visual.
+     */
+    const PRODUCTS = [
+      {
+        name: "Foldaway Portable LED Scoreboards",
+        badge: "FLAGSHIP SPORTS",
+        tagline: "Rapid-deploy folding multi-panel outdoor scoreboards built for Australian cricket, AFL & rugby clubs.",
+        imageUrl: "media/BMC2Final.jpg",
+        fallbackText: "Foldaway+Portable+LED+Scoreboard",
+        specs: [
+          { label: "Pixel Pitch", value: "P4 / P5 / P6.67 High-Bright Outdoor" },
+          { label: "Control System", value: "NovaStar Taurus (PlayHQ / FrogBox / Wi-Fi / 4G)" },
+          { label: "Off-Grid Power", value: "Optional 24V LiFePO4 Battery & Solar Kit" },
+          { label: "Deployment", value: "Folding wings lock securely; trailer or trolley mount" }
+        ]
+      },
+      {
+        name: "COB Fine-Pitch Indoor LED Walls",
+        badge: "ULTRA-HD COB",
+        tagline: "Chip-on-Board anti-glare, impact-resistant micro-pitch LED walls for clubhouses, studios & boardrooms.",
+        imageUrl: "media/BigTV1.jpg",
+        fallbackText: "COB+Fine-Pitch+Indoor+Wall",
+        specs: [
+          { label: "Pixel Pitch", value: "P0.93 / P1.25 / P1.56 / P1.87 Flip-Chip COB" },
+          { label: "Control System", value: "NovaStar VX600 / VX1000 All-in-One Processor" },
+          { label: "Surface Protection", value: "IP65 Front Sealed — Wipeable & Knock-Proof" },
+          { label: "Contrast Ratio", value: "10,000:1 Deep Black Levels & 170° Viewing" }
+        ]
+      },
+      {
+        name: "Folding LED Poster Displays",
+        badge: "PORTABLE EVENTS",
+        tagline: "640x1920mm wheeled digital posters that fold in half to fit inside a standard SUV or van.",
+        imageUrl: "media/BoundarySixClearScreen.jpg",
+        fallbackText: "Folding+LED+Poster+Display",
+        specs: [
+          { label: "Pixel Pitch", value: "P1.86 / P2.5 Indoor & Semi-Outdoor" },
+          { label: "Control System", value: "NovaStar TB40 Plug & Play USB / App / Cloud" },
+          { label: "Multi-Screen Sync", value: "Cascade up to 6 units seamlessly via HDMI" },
+          { label: "Dimensions", value: "640mm (W) x 1920mm (H) — Folds to 960mm" }
+        ]
+      },
+      {
+        name: "Modular Rental & Custom LED Arrays",
+        badge: "STAGE & CUSTOM",
+        tagline: "Lightweight die-cast magnesium 500x500mm & 500x1000mm cabinets with fast-lock rigging.",
+        imageUrl: "media/COBInstall.jpg",
+        fallbackText: "Modular+Rental+LED+Cabinets",
+        specs: [
+          { label: "Pixel Pitch", value: "P2.6 / P2.97 Indoor • P3.91 / P4.81 Outdoor" },
+          { label: "Control System", value: "NovaStar A5s / A8s Plus Receiving Cards" },
+          { label: "Off-Grid Option", value: "Compatible with 24V LiFePO4 Field Power Packs" },
+          { label: "Cabinet Size", value: "500x500mm (7.2kg) or 500x1000mm (11.5kg)" }
+        ]
+      }
+    ];
+
+    /**
+     * 3. DEMO VIDEOS & ACTION REELS LIST
+     * Paste normal YouTube URLs (e.g. "https://www.youtube.com/watch?v=...") or local MP4 paths.
+     */
+    const DEMO_VIDEOS = [
+      {
+        title: "Foldaway Cricket Scoreboard — Full Sunlight Daylight Test",
+        category: "Cricket & Sport",
+        videoUrl: "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+        thumbnailUrl: "media/AusIndiaU19.jpg",
+        duration: "01:24",
+        specsBadge: "P5 Outdoor • 5,800 Nits",
+        description: "Live scoring demo in Brisbane midday sun powered by a 24V LiFePO4 battery pack and NovaStar TB40."
+      },
+      {
+        title: "Folding LED Poster — 30-Second Unfold & Multi-Screen Cascade",
+        category: "Folding Posters",
+        videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+        thumbnailUrl: "media/BoundarySixClearScreen.jpg",
+        duration: "00:58",
+        specsBadge: "P1.86 COB • Wheeled Flight Case",
+        description: "Watch how a single operator rolls out, unfolds, and links three LED posters for corporate events."
+      },
+      {
+        title: "COB Fine-Pitch Display — Impact & Contrast Demonstration",
+        category: "COB & Immersive",
+        videoUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+        thumbnailUrl: "media/BigTV3.jpg",
+        duration: "02:10",
+        specsBadge: "P1.25 Flip-Chip COB",
+        description: "Close-up look at our sealed COB surface durability and NovaStar HDR colour calibration."
+      }
+    ];
+  </script>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATION LOGIC (AUTO-CAROUSEL, GALLERY & FORM HANDLERS)            -->
+  <!-- ===================================================================== -->
+  <script>
+    // Carousel State
+    let activeGroup = "All";
+    let currentSlideIndex = 0;
+    let isHoverPaused = false;
+    let isManualPaused = false;
+    let slideProgress = 0;
+    const SLIDE_DURATION_MS = 4500; // 4.5 seconds per slide
+    const TICK_MS = 50;
+    let carouselTimer = null;
+
+    function getFilteredSlides() {
+      if (activeGroup === "All") return SHOWCASE_SLIDES;
+      return SHOWCASE_SLIDES.filter(s => s.group === activeGroup);
+    }
+
+    function setShowcaseGroup(group) {
+      activeGroup = group;
+      currentSlideIndex = 0;
+      slideProgress = 0;
+
+      // Update active pill styling
+      document.querySelectorAll('.group-tab').forEach(btn => {
+        if (btn.getAttribute('data-group') === group) {
+          btn.className = 'group-tab px-3 py-1.5 rounded-lg text-xs font-bold bg-ledGreen text-obsidian transition-all';
+        } else {
+          btn.className = 'group-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all';
+        }
+      });
+
+      renderCarouselSlide();
+    }
+
+    function renderCarouselSlide() {
+      const slides = getFilteredSlides();
+      if (!slides.length) return;
+
+      if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+      if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+
+      const slide = slides[currentSlideIndex];
+      const imgEl = document.getElementById('carousel-img');
+      const fallbackEl = document.getElementById('carousel-fallback');
+
+      // Reset fallback visibility & load image
+      fallbackEl.classList.add('hidden');
+      imgEl.classList.remove('hidden', 'animate-slide-enter');
+      void imgEl.offsetWidth; // trigger reflow for smooth animation
+      imgEl.classList.add('animate-slide-enter');
+
+      imgEl.onerror = function() {
+        imgEl.classList.add('hidden');
+        fallbackEl.classList.remove('hidden');
+        document.getElementById('fallback-title').textContent = slide.title;
+        document.getElementById('fallback-path').textContent = slide.file;
+      };
+      imgEl.src = slide.file;
+      imgEl.alt = slide.title;
+
+      // Update caption & metadata
+      document.getElementById('carousel-group-badge').textContent = slide.group;
+      document.getElementById('carousel-file-badge').textContent = slide.file;
+      document.getElementById('carousel-title').textContent = slide.title;
+      document.getElementById('carousel-desc').textContent = slide.description;
+      document.getElementById('carousel-counter').textContent = currentSlideIndex + 1;
+      document.getElementById('carousel-total').textContent = slides.length;
+
+      // Render progress dots
+      const dotsContainer = document.getElementById('carousel-dots');
+      dotsContainer.innerHTML = slides.map((_, idx) => `
+        <button
+          onclick="goToSlide(${idx})"
+          aria-label="Go to slide ${idx + 1}"
+          class="h-2 rounded-full transition-all ${idx === currentSlideIndex ? 'w-6 bg-ledGreen' : 'w-2 bg-white/25 hover:bg-white/50'}">
+        </button>
+      `).join('');
+    }
+
+    function nextSlide() {
+      const slides = getFilteredSlides();
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      slideProgress = 0;
+      renderCarouselSlide();
+    }
+
+    function prevSlide() {
+      const slides = getFilteredSlides();
+      currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+      slideProgress = 0;
+      renderCarouselSlide();
+    }
+
+    function goToSlide(index) {
+      currentSlideIndex = index;
+      slideProgress = 0;
+      renderCarouselSlide();
+    }
+
+    function pauseCarousel(paused) {
+      isHoverPaused = paused;
+      updateCarouselStatusUI();
+    }
+
+    function toggleManualPause() {
+      isManualPaused = !isManualPaused;
+      updateCarouselStatusUI();
+    }
+
+    function updateCarouselStatusUI() {
+      const paused = isHoverPaused || isManualPaused;
+      const dot = document.getElementById('carousel-pulse-dot');
+      const text = document.getElementById('carousel-status-text');
+      if (paused) {
+        dot.className = 'w-2 h-2 rounded-full bg-ledAmber';
+        text.textContent = isManualPaused ? 'PAUSED' : 'HOVER PAUSE';
+      } else {
+        dot.className = 'w-2 h-2 rounded-full bg-ledGreen animate-ping';
+        text.textContent = 'AUTO REEL';
+      }
+    }
+
+    function startCarouselLoop() {
+      if (carouselTimer) clearInterval(carouselTimer);
+      carouselTimer = setInterval(() => {
+        if (isHoverPaused || isManualPaused) return;
+        slideProgress += (TICK_MS / SLIDE_DURATION_MS) * 100;
+        if (slideProgress >= 100) {
+          slideProgress = 0;
+          nextSlide();
+        } else {
+          const bar = document.getElementById('carousel-progress');
+          if (bar) bar.style.width = `${slideProgress}%`;
+        }
+      }, TICK_MS);
+    }
+
+    // Parse YouTube, Vimeo, or MP4 links
+    function parseVideoSource(url) {
+      if (!url) return { type: 'unknown', embedUrl: '', thumb: '' };
+      const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+      if (ytMatch && ytMatch[1]) {
+        const id = ytMatch[1];
+        return {
+          type: 'iframe',
+          embedUrl: `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`,
+          thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+        };
+      }
+      const vimeoMatch = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+      if (vimeoMatch && vimeoMatch[1]) {
+        return {
+          type: 'iframe',
+          embedUrl: `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`,
+          thumb: `https://placehold.co/800x450/0f1216/10e868?text=Vimeo+Demo+Reel`
+        };
+      }
+      return {
+        type: 'video',
+        embedUrl: url,
+        thumb: `https://placehold.co/800x450/0f1216/ffb020?text=LED+Action+Video`
+      };
+    }
+
+    // Render Products Grid
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      if (!grid) return;
+
+      grid.innerHTML = PRODUCTS.map((product) => {
+        const specsHtml = product.specs.map(s => `
+          <div class="flex justify-between items-start gap-4 py-2 border-b border-white/5 text-xs">
+            <span class="text-slate-400 font-mono shrink-0">${s.label}:</span>
+            <span class="text-slate-100 font-medium text-right">${s.value}</span>
+          </div>
+        `).join('');
+
+        return `
+          <article class="bg-surface border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-ledGreen/50 transition-all group">
+            <div>
+              <div class="relative h-56 sm:h-64 bg-obsidian overflow-hidden">
+                <img
+                  src="${product.imageUrl}"
+                  alt="${product.name}"
+                  onerror="this.src='https://placehold.co/800x480/0f1216/10e868?text=${product.fallbackText || 'Foldaway+LED'}'"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-lg bg-obsidian/90 backdrop-blur-md border border-ledGreen/40 text-ledGreen font-mono text-[11px] font-bold">
+                  ${product.badge}
+                </div>
+              </div>
+
+              <div class="p-6">
+                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-ledGreen transition-colors">
+                  ${product.name}
+                </h3>
+                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                  ${product.tagline}
+                </p>
+
+                <div class="mt-5 space-y-1">
+                  ${specsHtml}
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2">
+              <button
+                onclick="selectProductAndScroll('${product.name.replace(/'/g, "\\'")}')"
+                class="w-full py-3 px-4 rounded-xl bg-surfaceLight hover:bg-ledGreen text-white hover:text-obsidian border border-white/15 hover:border-ledGreen font-extrabold text-sm transition-all flex items-center justify-center gap-2">
+                <span>Request Quote & Spec Sheet</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Render Videos Grid
+    function renderVideos(category = 'All') {
+      const grid = document.getElementById('videos-grid');
+      if (!grid) return;
+
+      const filtered = category === 'All'
+        ? DEMO_VIDEOS
+        : DEMO_VIDEOS.filter(v => v.category.toLowerCase() === category.toLowerCase());
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 bg-obsidian rounded-2xl border border-white/10">
+            <p class="text-slate-400">No demo videos in this category yet. Use the Quick Edit Guide to add one!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((video) => {
+        const parsed = parseVideoSource(video.videoUrl);
+        const thumbSrc = video.thumbnailUrl && video.thumbnailUrl.trim() !== '' ? video.thumbnailUrl : parsed.thumb;
+        const originalIndex = DEMO_VIDEOS.indexOf(video);
+
+        return `
+          <div
+            onclick="openVideoModal(${originalIndex})"
+            class="cursor-pointer bg-obsidian border border-white/10 rounded-2xl overflow-hidden hover:border-ledAmber/60 transition-all group flex flex-col justify-between">
+            <div>
+              <div class="relative aspect-video bg-black overflow-hidden">
+                <img
+                  src="${thumbSrc}"
+                  alt="${video.title}"
+                  onerror="this.src='${parsed.thumb}'"
+                  class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                />
+                <div class="absolute inset-0 bg-black/35 flex items-center justify-center">
+                  <div class="w-14 h-14 rounded-full bg-ledGreen/95 text-obsidian flex items-center justify-center shadow-green-glow group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                  </div>
+                </div>
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 text-ledAmber font-mono text-[11px] border border-white/10">
+                  ${video.category}
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/85 text-white font-mono text-xs">
+                  ${video.duration || 'HD'}
+                </div>
+              </div>
+
+              <div class="p-5">
+                <div class="text-[11px] font-mono text-ledGreen mb-1">${video.specsBadge || 'NovaStar Powered'}</div>
+                <h3 class="text-base font-bold text-white group-hover:text-ledAmber transition-colors line-clamp-2">
+                  ${video.title}
+                </h3>
+                <p class="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                  ${video.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterVideos(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.className = 'filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-ledGreen text-obsidian transition-all';
+        } else {
+          btn.className = 'filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-surfaceLight text-slate-300 hover:text-white border border-white/10 transition-all';
+        }
+      });
+      renderVideos(category);
+    }
+
+    function openVideoModal(index) {
+      const video = DEMO_VIDEOS[index];
+      if (!video) return;
+
+      const parsed = parseVideoSource(video.videoUrl);
+      const container = document.getElementById('modal-video-container');
+      document.getElementById('modal-video-cat').textContent = `${video.category} • ${video.specsBadge || ''}`;
+      document.getElementById('modal-video-title').textContent = video.title;
+      document.getElementById('modal-video-desc').textContent = video.description;
+
+      if (parsed.type === 'iframe') {
+        container.innerHTML = `<iframe src="${parsed.embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      } else {
+        container.innerHTML = `<video src="${parsed.embedUrl}" controls autoplay playsinline class="w-full h-full"></video>`;
+      }
+
+      document.getElementById('video-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+      document.getElementById('modal-video-container').innerHTML = '';
+      document.getElementById('video-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function enquireFromModal() {
+      closeVideoModal();
+      const title = document.getElementById('modal-video-title').textContent;
+      document.getElementById('message').value = `Hi Charlie, I just watched the "${title}" demo video and would like more details and pricing.`;
+      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function selectProductAndScroll(productName) {
+      const select = document.getElementById('product-select');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.toLowerCase().includes(productName.toLowerCase().slice(0, 12))) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleEnquirySubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const club = document.getElementById('club').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const product = document.getElementById('product-select').value;
+      const power = document.getElementById('power-option').value;
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(`Foldaway LED Quote Enquiry: ${product} (${club || name})`);
+      const body = encodeURIComponent(
+        `Hi Charlie,\n\nI would like to request a quote / demo from Foldaway LED Scoreboards.\n\n` +
+        `Name: ${name}\n` +
+        `Club / Venue: ${club || 'N/A'}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone || 'N/A'}\n` +
+        `Product Interest: ${product}\n` +
+        `Power Setup: ${power}\n\n` +
+        `Project Details:\n${message}\n`
+      );
+
+      const feedback = document.getElementById('enquiry-feedback');
+      feedback.innerHTML = `
+        <strong>Opening your email app addressed to charlie@talkallsport.com...</strong><br/>
+        If your email client didn't open automatically, <a href="mailto:charlie@talkallsport.com?subject=${subject}&body=${body}" class="underline font-bold text-white">click here to launch email</a> or copy <span class="font-mono text-white">charlie@talkallsport.com</span>.
+      `;
+      feedback.classList.remove('hidden');
+
+      window.location.href = `mailto:charlie@talkallsport.com?subject=${subject}&body=${body}`;
+    }
+
+    function copyEmailAddress() {
+      const tempInput = document.createElement('input');
+      tempInput.value = 'charlie@talkallsport.com';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        const label = document.getElementById('copy-email-label');
+        label.textContent = 'Copied: charlie@talkallsport.com ✓';
+        label.classList.add('text-ledGreen');
+        setTimeout(() => {
+          label.textContent = 'Copy: charlie@talkallsport.com';
+          label.classList.remove('text-ledGreen');
+        }, 3000);
+      } catch (err) {
+        console.error('Copy failed', err);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function toggleEditGuide(show) {
+      const modal = document.getElementById('edit-guide-modal');
+      if (show) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Keyboard arrow support for the Hero Carousel
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Initialize everything on DOM load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCarouselSlide();
+      startCarouselLoop();
+      renderProducts();
+      renderVideos('All');
+    });
+  </script>
+</body>
+</html>

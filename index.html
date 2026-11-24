@@ -180,10 +180,6 @@
           <a href="#products" class="hover:text-ledGreen transition-colors">LED Range</a>
           <a href="#videos" class="hover:text-ledGreen transition-colors">Demo Videos</a>
           <a href="#applications" class="hover:text-ledGreen transition-colors">Applications</a>
-          <button onclick="toggleEditGuide(true)" class="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-ledAmber transition-colors">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-            Quick Edit Guide
-          </button>
           <a href="#enquire" class="px-5 py-2.5 rounded-xl bg-ledGreen text-obsidian font-extrabold hover:bg-emerald-400 transition-all shadow-green-glow">
             Enquire Now
           </a>
@@ -191,9 +187,6 @@
 
         <!-- Mobile Controls -->
         <div class="flex items-center gap-2 md:hidden">
-          <button onclick="toggleEditGuide(true)" class="p-2.5 rounded-xl bg-surfaceLight border border-white/10 text-ledAmber text-xs font-mono" aria-label="Quick Edit Guide">
-            &lt;/&gt;
-          </button>
           <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-surfaceLight border border-white/10 text-white hover:text-ledGreen" aria-label="Toggle Menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -408,10 +401,7 @@
           <p class="text-slate-400 mt-2 max-w-2xl">
             Modular, road-case ready, and trailer-mountable LED display solutions configured in Brisbane for Australian conditions.
           </p>
-        </div>
-        <button onclick="toggleEditGuide(true)" class="self-start md:self-auto text-xs font-mono text-ledAmber hover:underline flex items-center gap-1.5">
-          <span>+ How to edit product specs & photos</span>
-        </button>
+        </div>        
       </div>
 
       <!-- Dynamic Products Grid -->
@@ -665,7 +655,6 @@
         <a href="mailto:info@foldawayledscoreboards.com" class="text-slate-300 hover:text-white">info@foldawayledscoreboards.com</a>
         <a href="https://www.nuaxion.com.au/" target="_blank" rel="noopener noreferrer" class="text-ledGreen hover:underline font-semibold">Nuaxion XR/AR ↗</a>
         <a href="https://www.lecedeled.com/" target="_blank" rel="noopener noreferrer" class="text-ledAmber hover:underline font-semibold">Lecede LED ↗</a>
-        <button onclick="toggleEditGuide(true)" class="text-ledAmber hover:underline font-mono">Site Owner Quick Edit Guide</button>
       </div>
     </div>
   </footer>
@@ -705,7 +694,6 @@
           <h3 class="text-2xl font-black text-white mt-2">Folder Setup, Logo & Adding Content</h3>
           <p class="text-xs sm:text-sm text-slate-400 mt-1">Keep <code class="text-ledGreen">index.html</code> in your main website folder alongside a subfolder named <code class="text-ledAmber">media/</code>.</p>
         </div>
-        <button onclick="toggleEditGuide(false)" class="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300">✕</button>
       </div>
 
       <div class="space-y-6 mt-6 text-sm">
@@ -787,14 +775,7 @@
         </div>
       </div>
 
-      <div class="mt-6 pt-4 border-t border-white/10 flex justify-end">
-        <button onclick="toggleEditGuide(false)" class="px-5 py-2.5 rounded-xl bg-ledAmber text-obsidian font-extrabold text-xs">
-          Got It, Close Guide
-        </button>
-      </div>
-    </div>
-  </div>
-
+      
   <!-- ===================================================================== -->
   <!-- ===================================================================== -->
   <!-- EASY-EDIT CONFIGURATION SECTION FOR CHARLIE (EDIT BELOW THIS LINE!)   -->

@@ -549,7 +549,7 @@
           <span class="text-ledAmber font-mono text-xs uppercase tracking-widest">Brisbane Sales & Technical Consultation</span>
           <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Request a Quote or Live Demo</h2>
           <p class="text-slate-400 mt-2 text-sm sm:text-base">
-            Enquiries go directly to <strong class="text-ledGreen">charlie@talkallsport.com</strong>. Tell us about your club, venue, or custom screen size.
+            Enquiries go directly to <strong class="text-ledGreen">info@foldawayledscoreboards.com</strong>. Tell us about your club, venue, or custom screen size.
           </p>
         </div>
 
@@ -617,7 +617,7 @@
             </button>
 
             <button type="button" onclick="copyEmailAddress()" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-surfaceLight hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 flex items-center justify-center gap-2 transition-colors">
-              <span id="copy-email-label">Copy: charlie@talkallsport.com</span>
+              <span id="copy-email-label">Copy: info@foldawayledscoreboards.com</span>
             </button>
           </div>
         </form>
@@ -651,7 +651,7 @@
       </div>
 
       <div class="flex flex-wrap items-center gap-6 text-xs">
-        <a href="mailto:charlie@talkallsport.com" class="text-ledGreen hover:underline">charlie@talkallsport.com</a>
+        <a href="mailto:info@foldawayledscoreboards.com" class="text-ledGreen hover:underline">info@foldawayledscoreboards.com</a>
         <a href="mailto:info@foldawayledscoreboards.com" class="text-slate-300 hover:text-white">info@foldawayledscoreboards.com</a>
         <a href="https://www.nuaxion.com.au/" target="_blank" rel="noopener noreferrer" class="text-ledGreen hover:underline font-semibold">Nuaxion XR/AR ↗</a>
         <a href="https://www.lecedeled.com/" target="_blank" rel="noopener noreferrer" class="text-ledAmber hover:underline font-semibold">Lecede LED ↗</a>
@@ -1476,7 +1476,7 @@
     function enquireFromModal() {
       closeVideoModal();
       const title = document.getElementById('modal-video-title').textContent;
-      document.getElementById('message').value = `Hi Charlie, I just watched the "${title}" demo video and would like more details and pricing.`;
+      document.getElementById('message').value = `Hi, I just watched the "${title}" demo video and would like more details and pricing.`;
       document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -1503,7 +1503,7 @@
 
       const subject = encodeURIComponent(`Foldaway LED Quote Enquiry: ${product} (${club || name})`);
       const body = encodeURIComponent(
-        `Hi Charlie,\n\nI would like to request a quote / demo from Foldaway LED Scoreboards.\n\n` +
+        `Hi Foldaway Info,\n\nI would like to request a quote / demo from Foldaway LED Scoreboards.\n\n` +
         `Name: ${name}\n` +
         `Club / Venue: ${club || 'N/A'}\n` +
         `Email: ${email}\n` +
@@ -1515,26 +1515,26 @@
 
       const feedback = document.getElementById('enquiry-feedback');
       feedback.innerHTML = `
-        <strong>Opening your email app addressed to charlie@foldawayledscoreboards.com...</strong><br/>
-        If your email client didn't open automatically, <a href="mailto:charlie@talkallsport.com?subject=${subject}&body=${body}" class="underline font-bold text-white">click here to launch email</a> or copy <span class="font-mono text-white">charlie@talkallsport.com</span>.
+        <strong>Opening your email app addressed to info@foldawayledscoreboards.com...</strong><br/>
+        If your email client didn't open automatically, <a href="mailto:info@foldawayledscoreboards.com?subject=${subject}&body=${body}" class="underline font-bold text-white">click here to launch email</a> or copy <span class="font-mono text-white">info@foldawayledscoreboards.com</span>.
       `;
       feedback.classList.remove('hidden');
 
-      window.location.href = `mailto:charlie@talkallsport.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@foldawayledscoreboards.com?subject=${subject}&body=${body}`;
     }
 
     function copyEmailAddress() {
       const tempInput = document.createElement('input');
-      tempInput.value = 'charlie@talkallsport.com';
+      tempInput.value = 'info@foldawayledscoreboards.com';
       document.body.appendChild(tempInput);
       tempInput.select();
       try {
         document.execCommand('copy');
         const label = document.getElementById('copy-email-label');
-        label.textContent = 'Copied: charlie@talkallsport.com ✓';
+        label.textContent = 'Copied: info@foldawayledscoreboards.com ✓';
         label.classList.add('text-ledGreen');
         setTimeout(() => {
-          label.textContent = 'Copy: charlie@talkallsport.com';
+          label.textContent = 'Copy: info@foldawayledscoreboards.com';
           label.classList.remove('text-ledGreen');
         }, 3000);
       } catch (err) {

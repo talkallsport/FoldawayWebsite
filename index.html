@@ -1566,17 +1566,7 @@
         }
       }
     }
-
-      const feedback = document.getElementById('enquiry-feedback');
-      feedback.innerHTML = `
-        <strong>Opening your email app addressed to info@foldawayledscoreboards.com...</strong><br/>
-        If your email client didn't open automatically, <a href="mailto:info@foldawayledscoreboards.com?subject=${subject}&body=${body}" class="underline font-bold text-white">click here to launch email</a> or copy <span class="font-mono text-white">info@foldawayledscoreboards.com</span>.
-      `;
-      feedback.classList.remove('hidden');
-
-      window.location.href = `mailto:info@foldawayledscoreboards.com?subject=${subject}&body=${body}`;
-    }
-
+    
     function copyEmailAddress() {
       const tempInput = document.createElement('input');
       tempInput.value = 'info@foldawayledscoreboards.com';
